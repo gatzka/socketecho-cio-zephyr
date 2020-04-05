@@ -165,13 +165,11 @@ void main(void)
 	err = cio_server_socket_set_tcp_fast_open(&ss, true);
 	if (cio_unlikely(err != CIO_SUCCESS)) {
 		fprintf(stderr, "could not set TCP FASTOPEN for server socket!\n");
-		goto close_socket;
 	}
 
 	err = cio_server_socket_set_reuse_address(&ss, true);
 	if (err != CIO_SUCCESS) {
 		fprintf(stderr, "could not set reuse address for server socket!\n");
-		goto close_socket;
 	}
 
 	err = cio_server_socket_bind(&ss, &endpoint);
