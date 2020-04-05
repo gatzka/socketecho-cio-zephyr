@@ -1,0 +1,28 @@
+west:
+  url: https://github.com/zephyrproject-rtos/west
+  revision: v0.7.2
+
+manifest:
+  remotes:
+    - name: gatzka
+      url-base: git@github.com:gatzka
+    - name: zephyr-remote
+      url-base: https://github.com/zephyrproject-rtos
+
+  projects:
+    - name: cio
+      remote: gatzka
+      revision: master
+
+    - name: zephyr
+      remote: zephyr-remote
+      revision: v2.2.0
+      west-commands: scripts/west-commands.yml
+
+    - name: net-tools
+      remote: zephyr-remote
+      revision: master
+
+  self:
+    path: socketecho-cio-zephyr
+
