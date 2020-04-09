@@ -189,6 +189,7 @@ void main(void)
 		fprintf(stderr, "could not run event loop!\n");
 	}
 
+	fprintf(stderr, "event loop exited!\n");
 close_socket:
 	cio_server_socket_close(&ss);
 destroy_loop:
